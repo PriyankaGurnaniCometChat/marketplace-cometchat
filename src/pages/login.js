@@ -1,16 +1,20 @@
-import React, { useReducer } from "react";
-import { Link } from "react-router-dom";
+import React, { useReducer, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { CometChat } from '@cometchat-pro/chat';
+import { loginCometChatUser } from '../cometchat';
 
 const initialState = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "email":
+    case 'email':
       return { ...state, email: action.payload };
-    case "password":
+    case 'password':
       return { ...state, password: action.payload };
     default:
       throw new Error();
@@ -19,6 +23,8 @@ const reducer = (state, action) => {
 
 export default function LoginPage() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [error, setError] = useState('');
+  let history = useHistory();
 
   const handleOnChange = (evt) => {
     const { target } = evt;
@@ -28,16 +34,38 @@ export default function LoginPage() {
     });
   };
 
+  const loginUser = (evt) => {
+    evt.preventDefault();
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(state.email, state.password)
+      .then((doc) => {
+        loginCometChatUser(doc.user.uid);
+        history.push('/');
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.log(`Unable to login: ${err.message}`);
+      });
+  };
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center mx-auto py-2 border-gray-700 w-60">
         <div className="inline-flex">
-          <a className="_o6689fn" href="/">
-            <img src="logo-black.png" height="30" width="75" alt="Logo"></img>
-          </a>
+          <Link to="/">
+            <img src="/logo-black.png" className="w-24" alt="Logo"></img>
+          </Link>
         </div>
-        <form className="border-gray-300 border rounded-sm my-4 p-4">
+        <form
+          className="border-gray-300 border rounded-sm my-4 p-4"
+          onSubmit={loginUser}
+        >
           <h1 className="font-bold">Sign-In</h1>
+          {error && (
+            <p className="text-red-500 font-bold text-tiny py-2 ">{error}</p>
+          )}
           <label htmlFor="email" className="font-bold text-tiny ml-1">
             Email
           </label>
@@ -73,11 +101,11 @@ export default function LoginPage() {
             Continue
           </button>
           <p className="text-tiny tracking-none">
-            By continuing, you agree to Amazon's{" "}
+            By continuing, you agree to Amazon's{' '}
             <a href="#" className="text-blue-500">
               Conditions of Use
-            </a>{" "}
-            and{" "}
+            </a>{' '}
+            and{' '}
             <a href="#" className="text-blue-500">
               Privacy Notice
             </a>

@@ -1,15 +1,14 @@
-import { FirestoreCollection } from "@react-firebase/firestore";
-import React from "react";
+import React from 'react';
 
 export default function Footer() {
   return (
     <footer className="w-full flex flex-col relative">
-      <div className="bg-gray-700 w-full flex justify-center items-center mx-auto px-2 py-1">
+      <div className="bg-gray-700 w-full flex justify-center items-center mx-auto px-2 py-1 md:py-2">
         <a href="#" className="text-white text-tiny leading-4 text-center">
           Back to top
         </a>
       </div>
-      <div className="bg-gray-800 w-full flex flex-col md:flex-row justify-between items-start mx-auto px-2 md:px-48 py-4">
+      <div className="bg-gray-800 w-full flex flex-col md:flex-row justify-between items-start mx-auto px-2 md:px-48 lg:px-96 py-4 md:py-10">
         <section>
           <h5 className="font-bold text-white text-tiny">Get to Know Us</h5>
           <ul className="text-gray-200 text-tiny">
@@ -108,10 +107,10 @@ export default function Footer() {
           </ul>
         </section>
       </div>
-      <div className="bg-gray-800 w-full flex justify-center items-center mx-auto py-4 border-t border-gray-700">
+      <div className="bg-gray-800 w-full flex justify-center items-center mx-auto py-4 lg:py-6 border-t border-gray-700">
         <div className="inline-flex">
           <a className="_o6689fn" href="/">
-            <img src="/logo-white.png" height="30" width="60" alt="Logo"></img>
+            <img src="/logo-white.png" className="w-24" alt="Logo"></img>
           </a>
         </div>
       </div>

@@ -1,8 +1,8 @@
-import { FirestoreCollection } from "@react-firebase/firestore";
-import React, { useState } from "react";
-import CategoryCard from "../components/CategoryCard";
-import ProductSlider from "../components/ProductSlider";
-import { withLayout } from "../wrappers/layout";
+import { FirestoreCollection } from '@react-firebase/firestore';
+import React, { useState } from 'react';
+import CategoryCard from '../components/CategoryCard';
+import ProductSlider from '../components/ProductSlider';
+import { withLayout } from '../wrappers/layout';
 const IndexPage = () => {
   return (
     <div

@@ -1,8 +1,13 @@
-import React from "react";
-import { withLayout } from "../wrappers/layout";
+import React, { useEffect } from 'react';
+import { withLayout } from '../wrappers/layout';
+import { CometChatGroupListWithMessages } from '../CometChatWorkspace/src';
 
 const InboxPage = () => {
-  return <div>Inbox</div>;
+  return (
+    <div className="h-screen w-full">
+      <CometChatGroupListWithMessages />
+    </div>
+  );
 };
 
 export default withLayout(InboxPage);

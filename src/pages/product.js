@@ -1,22 +1,39 @@
-import {
-  FirestoreCollection,
-  FirestoreDocument,
-} from "@react-firebase/firestore";
-import React from "react";
-import { useParams } from "react-router";
-import { withLayout } from "../wrappers/layout";
+import { IfFirebaseAuthed, IfFirebaseAuthedAnd } from '@react-firebase/auth';
+import { FirestoreCollection } from '@react-firebase/firestore';
+import React from 'react';
+import { useHistory, useParams } from 'react-router';
+import { addCometChatGroup } from '../cometchat';
+import { withLayout } from '../wrappers/layout';
 
 const ProductPage = () => {
   const { id } = useParams();
+  const history = useHistory();
+
+  const createProductChatGroup = async (
+    uid,
+    ownerUID,
+    title,
+    image,
+    productId
+  ) => {
+    const GUID = `${uid}-${ownerUID}-${productId}`;
+
+    try {
+      await addCometChatGroup(GUID, title, image, [uid, ownerUID]);
+      history.push('/inbox');
+    } catch (error) {
+      console.log('Group creation failed with exception:', error);
+    }
+  };
 
   return (
     <FirestoreCollection
       limit={1}
       path="/products"
       where={{
-        field: "id",
-        operator: "==",
-        value: parseInt(id),
+        field: 'id',
+        operator: '==',
+        value: id,
       }}
     >
       {({ isLoading, value }) => {
@@ -24,7 +41,7 @@ const ProductPage = () => {
           return <p>Loading...</p>;
         }
 
-        const { image, title, price, description } = value[0];
+        const { image, title, price, description, ownerUID, id } = value[0];
         return (
           <div className="flex flex-col px-2 md:px-10">
             <div className="grid grid-cols-11 py-4 gap-6">
@@ -43,8 +60,8 @@ const ProductPage = () => {
                       focusable="false"
                       className="h-2 overflow-visible"
                       style={{
-                        fill: "#FF9900",
-                        stroke: "#bd7100",
+                        fill: '#FF9900',
+                        stroke: '#bd7100',
                         strokeWidth: 1,
                       }}
                     >
@@ -76,7 +93,7 @@ const ProductPage = () => {
                 </div>
                 <div className="border-b border-t my-2 py-2">
                   <p className="text-tiny text-gray-700 mb-1">
-                    Price:{" "}
+                    Price:{' '}
                     <span className="text-lg text-red-600 font-bold px-1">
                       {price}€
                     </span>
@@ -101,7 +118,7 @@ const ProductPage = () => {
                 </p>
                 <div className="my-2">
                   <p className="text-gray-700 text-tiny py-1">
-                    Arrives:{" "}
+                    Arrives:{' '}
                     <span className="font-bold text-black">Tomorrow</span>
                   </p>
                   <div className="flex justify-start items-center">
@@ -114,8 +131,8 @@ const ProductPage = () => {
                         focusable="false"
                         className="h-2 w-2 overflow-visible -mt-1"
                         style={{
-                          fill: "none",
-                          stroke: "#000000",
+                          fill: 'none',
+                          stroke: '#000000',
                           strokeWidth: 1,
                         }}
                       >
@@ -150,10 +167,33 @@ const ProductPage = () => {
                 </button>
                 <button
                   type="submit"
-                  className="bg-gradient-to-t from-yellow-600 to-yellow-400 text-tiny p-1 w-full rounded-sm border border-gray-500"
+                  className="bg-gradient-to-t from-yellow-600 to-yellow-400 text-tiny p-1 w-full rounded-sm my-2 border border-gray-500"
                 >
                   Buy now
                 </button>
+
+                <IfFirebaseAuthedAnd
+                  filter={({ user }) => {
+                    return user.uid !== ownerUID;
+                  }}
+                >
+                  {({ user }) => (
+                    <button
+                      className="bg-gradient-to-t from-blue-400 to-blue-200 text-tiny p-1 w-full my-2 rounded-sm border border-gray-500 text-white"
+                      onClick={() =>
+                        createProductChatGroup(
+                          user.uid,
+                          ownerUID,
+                          title,
+                          image,
+                          id
+                        )
+                      }
+                    >
+                      Chat with Seller
+                    </button>
+                  )}
+                </IfFirebaseAuthedAnd>
               </div>
             </div>
           </div>

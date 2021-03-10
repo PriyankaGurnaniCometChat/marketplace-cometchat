@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductSlider({ title, products }) {
   return (
@@ -15,13 +16,13 @@ export default function ProductSlider({ title, products }) {
       >
         {React.Children.toArray(
           products.map((product) => (
-            <a href={`/product/${product.id || 1}`}>
+            <Link to={`/product/${product.id || 1}`}>
               <img
                 src={product.image}
                 alt={product.title}
-                className="h-24 w-24"
+                className="h-24 w-24 md:my-3"
               />
-            </a>
+            </Link>
           ))
         )}
       </div>

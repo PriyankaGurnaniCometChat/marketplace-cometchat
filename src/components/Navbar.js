@@ -1,15 +1,16 @@
-import { FirestoreCollection } from "@react-firebase/firestore";
-import React from "react";
-import { Link } from "react-router-dom";
+import { FirebaseAuthConsumer } from '@react-firebase/auth';
+import { FirestoreCollection } from '@react-firebase/firestore';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex flex-col relative">
-      <div className="bg-gray-900 w-full flex justify-between items-center mx-auto px-2 py-1">
+    <nav className="w-full flex flex-col relative z-10">
+      <div className="bg-gray-900 w-full flex justify-between items-center mx-auto px-3 py-2">
         {/* <!-- logo --> */}
         <div className="inline-flex">
           <a className="_o6689fn" href="/">
-            <img src="/logo-white.png" height="30" width="70" alt="Logo"></img>
+            <img src="/logo-white.png" className="w-24" alt="Logo"></img>
           </a>
         </div>
 
@@ -28,8 +29,8 @@ export default function Navbar() {
                   focusable="false"
                   className="h-2 w-2 overflow-visible"
                   style={{
-                    fill: "none",
-                    stroke: "#ffffff",
+                    fill: 'none',
+                    stroke: '#ffffff',
                     strokeWidth: 1.33333,
                   }}
                 >
@@ -71,8 +72,8 @@ export default function Navbar() {
                     focusable="false"
                     className="h-2 w-2 overflow-visible"
                     style={{
-                      fill: "none",
-                      stroke: "currentcolor",
+                      fill: 'none',
+                      stroke: 'currentcolor',
                       strokeWidth: 3.33333,
                     }}
                   >
@@ -88,21 +89,51 @@ export default function Navbar() {
         {/* <!-- end search bar --> */}
 
         {/* <!-- login --> */}
-        {/* <FirebaseAuthConsumer>
-        {({ isSignedIn, user, providerId }) => {
-          return <p>aqui: {JSON.stringify(isSignedIn)}</p>;
-        }}
-      </FirebaseAuthConsumer> */}
-        <Link to="/login">
-          <div className="hidden sm:block flex mx-1">
-            <div className="flex justify-center items-center">
-              <div className="flex flex-col text-tiny leading-tight text-left">
-                <p className="text-white">Hello, Sign In</p>
-                <p className="text-white font-bold">Accounts and Lists</p>
-              </div>
+        <div className="hidden sm:block flex mx-2 mr-6">
+          <div className="flex justify-center items-center">
+            <div className="flex flex-col text-tiny leading-tight text-left group inline-block relative">
+              <p className="text-white inline-flex">Hello,</p>
+              <FirebaseAuthConsumer>
+                {({ isSignedIn }) => (
+                  <ul className="absolute hidden text-gray-700 group-hover:block rounded bg-white shadow mt-7 font-bold text-md">
+                    {!isSignedIn && (
+                      <li className="">
+                        <Link
+                          className="rounded-t hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+                          to="/login"
+                        >
+                          Sign In
+                        </Link>
+                      </li>
+                    )}
+
+                    {isSignedIn && (
+                      <>
+                        <li className="">
+                          <Link
+                            className="rounded-t hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+                            to="/logout"
+                          >
+                            Sign Out
+                          </Link>
+                        </li>
+                        <li className="">
+                          <Link
+                            className="rounded-t hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+                            to="/product/new"
+                          >
+                            New Product
+                          </Link>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                )}
+              </FirebaseAuthConsumer>
+              <p className="text-white font-bold">Account & Lists</p>
             </div>
           </div>
-        </Link>
+        </div>
         {/* <!-- end login --> */}
 
         {/* <!-- start cart --> */}

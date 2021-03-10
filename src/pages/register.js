@@ -63,7 +63,7 @@ export default function RegisterPage() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center mx-auto py-2 border-gray-700 w-60">
+      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-60">
         <div className="inline-flex">
           <Link to="/">
             <img src="/logo-black.png" className="w-24" alt="Logo"></img>
@@ -77,7 +77,7 @@ export default function RegisterPage() {
           {error && (
             <p className="text-red-500 font-bold text-tiny py-2 ">{error}</p>
           )}
-          <label htmlFor="name" className="font-bold text-tiny ml-1">
+          <label htmlFor="name" className="font-bold text-tiny md:ml-1">
             Name
           </label>
           <input
@@ -92,7 +92,7 @@ export default function RegisterPage() {
             placeholder="Name"
             minLength={3}
           />
-          <label htmlFor="email" className="font-bold text-tiny ml-1">
+          <label htmlFor="email" className="font-bold text-tiny md:ml-1">
             Email
           </label>
           <input
@@ -106,7 +106,7 @@ export default function RegisterPage() {
             className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
             placeholder="Email"
           />
-          <label htmlFor="password" className="font-bold text-tiny ml-1">
+          <label htmlFor="password" className="font-bold text-tiny md:ml-1">
             Password
           </label>
           <input
@@ -121,7 +121,7 @@ export default function RegisterPage() {
             placeholder="Password"
             minLength={6}
           />
-          <label htmlFor="password" className="font-bold text-tiny ml-1">
+          <label htmlFor="password" className="font-bold text-tiny md:ml-1">
             Re-Enter Password
           </label>
           <input

@@ -10,9 +10,11 @@ export default function ProductSlider({ title, products }) {
       </a>
       <div
         style={{
-          gridTemplateColumns: `repeat(${products.length}, calc(20% - 1rem * 2))`,
+          gridTemplateColumns: `repeat(${products.length}, calc(20% - 1rem * ${
+            2 / window.innerWidth
+          }))`,
         }}
-        className={`grid gap-4 grid-rows-1 overflow-x-scroll whitespace-nowrap my-4`}
+        className={`grid gap-2 md:gap-4 grid-rows-1 overflow-x-scroll whitespace-nowrap my-4`}
       >
         {React.Children.toArray(
           products.map((product) => (
@@ -20,7 +22,7 @@ export default function ProductSlider({ title, products }) {
               <img
                 src={product.image}
                 alt={product.title}
-                className="h-24 w-24 md:my-3"
+                className="h-24 md:w-24 md:my-3"
               />
             </Link>
           ))

@@ -72,7 +72,7 @@ export default function NewProductPage() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col justify-center items-center mx-auto py-2 border-gray-700 w-2/5">
+      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-60">
         <div className="inline-flex">
           <Link to="/">
             <img src="/logo-black.png" className="w-24" alt="Logo"></img>

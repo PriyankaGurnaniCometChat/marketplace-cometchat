@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function SideFilter() {
   return (
@@ -57,8 +57,8 @@ export default function SideFilter() {
                 focusable="false"
                 className="h-2 overflow-visible"
                 style={{
-                  fill: "#FF9900",
-                  stroke: "#bd7100",
+                  fill: '#FF9900',
+                  stroke: '#bd7100',
                   strokeWidth: 1,
                 }}
               >
@@ -94,8 +94,8 @@ export default function SideFilter() {
                 focusable="false"
                 className="h-2 overflow-visible"
                 style={{
-                  fill: "#FF9900",
-                  stroke: "#bd7100",
+                  fill: '#FF9900',
+                  stroke: '#bd7100',
                   strokeWidth: 1,
                 }}
               >
@@ -132,8 +132,8 @@ export default function SideFilter() {
                 focusable="false"
                 className="h-2 overflow-visible"
                 style={{
-                  fill: "#FF9900",
-                  stroke: "#bd7100",
+                  fill: '#FF9900',
+                  stroke: '#bd7100',
                   strokeWidth: 1,
                 }}
               >
@@ -171,8 +171,8 @@ export default function SideFilter() {
                 focusable="false"
                 className="h-2 overflow-visible"
                 style={{
-                  fill: "#FF9900",
-                  stroke: "#bd7100",
+                  fill: '#FF9900',
+                  stroke: '#bd7100',
                   strokeWidth: 1,
                 }}
               >

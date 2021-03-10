@@ -1,5 +1,5 @@
 import { FirestoreCollection } from '@react-firebase/firestore';
-import React, { useState } from 'react';
+import React from 'react';
 import CategoryCard from '../components/CategoryCard';
 import ProductSlider from '../components/ProductSlider';
 import { withLayout } from '../wrappers/layout';
@@ -9,10 +9,10 @@ const IndexPage = () => {
       style={{
         backgroundImage: `url("/hero.jpg")`,
       }}
-      className="w-full h-full pt-32 bg-no-repeat bg-contain"
+      className="w-full h-full pt-10 md:pt-32 bg-no-repeat bg-contain"
     >
       <div className="mx-4">
-        <section className="grid grid-cols-3 md:grid-cols-4 gap-4 grid-flow-row auto-rows-max">
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-4 grid-flow-row auto-rows-max">
           <FirestoreCollection path="/categories">
             {({ isLoading, value }) => {
               return isLoading ? (

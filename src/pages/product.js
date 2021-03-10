@@ -1,4 +1,4 @@
-import { IfFirebaseAuthed, IfFirebaseAuthedAnd } from '@react-firebase/auth';
+import { IfFirebaseAuthedAnd } from '@react-firebase/auth';
 import { FirestoreCollection } from '@react-firebase/firestore';
 import React from 'react';
 import { useHistory, useParams } from 'react-router';
@@ -44,7 +44,7 @@ const ProductPage = () => {
         const { image, title, price, description, ownerUID, id } = value[0];
         return (
           <div className="flex flex-col px-2 md:px-10">
-            <div className="grid grid-cols-11 py-4 gap-6">
+            <div className="block md:grid grid-cols-11 py-4 gap-4 md:gap-6">
               <div className="col-span-5 bg-red-200">
                 <img src={image} className="w-full" alt="Product"></img>
               </div>
@@ -109,7 +109,7 @@ const ProductPage = () => {
                   <p className="py-1">{description}</p>
                 </div>
               </div>
-              <div className="col-span-2 p-3 rounded border border-gray-300">
+              <div className="block col-span-2 p-3 rounded border border-gray-300 w-full">
                 <p className="text-tiny text-gray-700 mb-1">
                   <span className="text-md text-red-600 font-bold pr-1">
                     {price}€

@@ -8,8 +8,8 @@ export default function Footer() {
           Back to top
         </a>
       </div>
-      <div className="bg-gray-800 w-full flex flex-col md:flex-row justify-between items-start mx-auto px-2 md:px-48 lg:px-96 py-4 md:py-10">
-        <section>
+      <div className="bg-gray-800 w-full flex flex-col text-center md:text-left md:flex-row justify-center md:justify-between items-center md:items-start mx-auto px-2 md:px-48 lg:px-96 py-4 md:py-10">
+        <section className="my-2 md:my-0">
           <h5 className="font-bold text-white text-tiny">Get to Know Us</h5>
           <ul className="text-gray-200 text-tiny">
             <li className="leading-5">
@@ -35,7 +35,7 @@ export default function Footer() {
             </li>
           </ul>
         </section>
-        <section>
+        <section className="my-2 md:my-0">
           <h5 className="font-bold text-white text-tiny">Make Money with Us</h5>
           <ul className="text-gray-200 text-tiny">
             <li className="leading-5">
@@ -58,7 +58,7 @@ export default function Footer() {
             </li>
           </ul>
         </section>
-        <section>
+        <section className="my-2 md:my-0">
           <h5 className="font-bold text-white text-tiny">
             Amazon Payment Products
           </h5>
@@ -77,7 +77,7 @@ export default function Footer() {
             </li>
           </ul>
         </section>
-        <section>
+        <section className="my-2 md:my-0">
           <h5 className="font-bold text-white text-tiny">Let Us Help You</h5>
           <ul className="text-gray-200 text-tiny">
             <li className="leading-5">

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <nav className="w-full flex flex-col relative z-10">
-      <div className="bg-gray-900 w-full flex justify-between items-center mx-auto px-3 py-2">
+      <div className="bg-gray-900 w-full flex justify-between items-center mx-auto px-3 py-1">
         {/* <!-- logo --> */}
         <div className="inline-flex">
           <a className="_o6689fn" href="/">
@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* <!-- end delivery location --> */}
 
         {/* <!-- search bar --> */}
-        <div className="hidden sm:block flex flex-grow mx-2">
+        <div className="sm:block flex flex-grow mx-2">
           <div className="flex items-center flex-grow max-w-full">
             <form
               className="flex items-center flex-grow pl-2 relative rounded-sm bg-white"
@@ -89,7 +89,7 @@ export default function Navbar() {
         {/* <!-- end search bar --> */}
 
         {/* <!-- login --> */}
-        <div className="hidden sm:block flex mx-2 mr-6">
+        <div className="sm:block flex mx-2 mr-4">
           <div className="flex justify-center items-center">
             <div className="flex flex-col text-tiny leading-tight text-left group inline-block relative">
               <p className="text-white inline-flex">Hello,</p>
@@ -125,6 +125,14 @@ export default function Navbar() {
                             New Product
                           </Link>
                         </li>
+                        <li className="block md:hidden">
+                          <Link
+                            className="rounded-t hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+                            to="/inbox"
+                          >
+                            Inbox
+                          </Link>
+                        </li>
                       </>
                     )}
                   </ul>
@@ -156,7 +164,7 @@ export default function Navbar() {
         </Link>
         {/* <!-- end cart --> */}
       </div>
-      <div className="bg-gray-800 w-full flex justify-start items-center mx-auto px-2 py-1">
+      <div className="hidden md:block bg-gray-800 w-full flex justify-start items-center mx-auto px-2 py-1">
         <div className="text-white text-tiny leading-4">
           <ul className="flex">
             <FirestoreCollection path="/categories" limit={4}>

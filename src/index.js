@@ -1,25 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
-import './styles/tailwind.css';
-import App from './App';
-import firebase from 'firebase';
-
 import { firebaseConfig } from './firebase';
 import { FirebaseAuthProvider } from '@react-firebase/auth';
 import { FirestoreProvider } from '@react-firebase/firestore';
+import firebase from 'firebase';
 
 import { CometChat } from '@cometchat-pro/chat';
 
-const APP_ID = '299185ded2c0f1d';
-const REGION = 'eu';
+import './styles/index.css';
+import './styles/tailwind.css';
+import App from './App';
 
 const appSetting = new CometChat.AppSettingsBuilder()
   .subscribePresenceForAllUsers()
-  .setRegion(REGION)
+  .setRegion(process.env.REACT_APP_COMETCHAT_REGION)
   .build();
 
-CometChat.init(APP_ID, appSetting).then(
+CometChat.init(process.env.REACT_APP_COMETCHAT_APP_ID, appSetting).then(
   () => {
     console.log('Initialization completed successfully');
 

@@ -1,10 +1,11 @@
 import { CometChat } from '@cometchat-pro/chat';
 
-const AUTH_KEY = 'ab9ce5d1b09cdaf1e8525af87436eebeed73de17';
-
 const loginCometChatUser = async (uid) => {
   try {
-    const user = await CometChat.login(uid, AUTH_KEY);
+    const user = await CometChat.login(
+      uid,
+      process.env.REACT_APP_COMETCHAT_AUTH_KEY
+    );
     console.log('Login Successful:', { user });
   } catch (error) {
     console.log('Login failed with exception:', { error });
@@ -26,7 +27,10 @@ const registerCometChatUser = async (name, uid) => {
   user.setName(name);
 
   try {
-    const createdUser = await CometChat.createUser(user, AUTH_KEY);
+    const createdUser = await CometChat.createUser(
+      user,
+      process.env.REACT_APP_COMETCHAT_AUTH_KEY
+    );
     console.log('user created', createdUser);
   } catch (error) {
     console.log('Register failed with exception:', { error });

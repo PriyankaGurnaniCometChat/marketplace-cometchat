@@ -4,15 +4,15 @@ export default function SideFilter() {
   return (
     <fieldset className="w-full border-r border-gray-300 h-full">
       <section className="my-1">
-        <h3 className="text-tiny font-bold">Featured Brands</h3>
+        <h3 className="text-base font-bold">Featured Brands</h3>
         <ul className="p-2">
           <li className="flex items-center">
             <input type="checkbox" value="Mika" className="mr-1 h-3 w-3" />
-            <span className="text-tiny">Mika</span>
+            <span className="text-base">Mika</span>
           </li>
           <li className="flex items-center">
             <input type="checkbox" value="Carver" className="mr-1 h-3 w-3" />
-            <span className="text-tiny">Carver</span>
+            <span className="text-base">Carver</span>
           </li>
           <li className="flex items-center">
             <input
@@ -20,11 +20,11 @@ export default function SideFilter() {
               value="Rush Hills"
               className="mr-1 h-3 w-3"
             />
-            <span className="text-tiny">Rush Hills</span>
+            <span className="text-base">Rush Hills</span>
           </li>
           <li className="flex items-center">
             <input type="checkbox" value="Healy" className="mr-1 h-3 w-3" />
-            <span className="text-tiny">Healy</span>
+            <span className="text-base">Healy</span>
           </li>
           <li className="flex items-center">
             <input
@@ -32,7 +32,7 @@ export default function SideFilter() {
               value="Holmes Cano"
               className="mr-1 h-3 w-3"
             />
-            <span className="text-tiny">Holmes Cano</span>
+            <span className="text-base">Holmes Cano</span>
           </li>
           <li className="flex items-center">
             <input
@@ -40,12 +40,12 @@ export default function SideFilter() {
               value="Bain Kline"
               className="mr-1 h-3 w-3"
             />
-            <span className="text-tiny">Bain Kline</span>
+            <span className="text-base">Bain Kline</span>
           </li>
         </ul>
       </section>
       <section className="my-1">
-        <h3 className="text-tiny font-bold">Avg. Rating</h3>
+        <h3 className="text-base font-bold">Avg. Rating</h3>
         <ul className="p-2">
           <li className="flex items-center mb-2">
             <div className="h-2 flex-grow flex items-center">
@@ -81,7 +81,7 @@ export default function SideFilter() {
                   fill="#f9de8c"
                 />
               </svg>
-              <p className="text-tiny">& Up</p>
+              <p className="text-base">& Up</p>
             </div>
           </li>
           <li className="flex items-center mb-2">
@@ -119,7 +119,7 @@ export default function SideFilter() {
                   fill="#f9de8c"
                 />
               </svg>
-              <p className="text-tiny">& Up</p>
+              <p className="text-base">& Up</p>
             </div>
           </li>
           <li className="flex items-center mb-2">
@@ -158,7 +158,7 @@ export default function SideFilter() {
                   fill="#f9de8c"
                 />
               </svg>
-              <p className="text-tiny">& Up</p>
+              <p className="text-base">& Up</p>
             </div>
           </li>
           <li className="flex items-center mb-2">
@@ -198,33 +198,33 @@ export default function SideFilter() {
                   fill="#f9de8c"
                 />
               </svg>
-              <p className="text-tiny">& Up</p>
+              <p className="text-base">& Up</p>
             </div>
           </li>
         </ul>
       </section>
       <section className="my-1">
-        <h3 className="text-tiny font-bold">Condition</h3>
+        <h3 className="text-base font-bold">Condition</h3>
         <ul className="p-2">
           <li className="flex items-center">
-            <span className="text-tiny">New</span>
+            <span className="text-base">New</span>
           </li>
           <li className="flex items-center">
-            <span className="text-tiny">Used</span>
+            <span className="text-base">Used</span>
           </li>
           <li className="flex items-center">
-            <span className="text-tiny">Renewed</span>
+            <span className="text-base">Renewed</span>
           </li>
         </ul>
       </section>
       <section className="my-1">
-        <h3 className="text-tiny font-bold">New & Upcoming</h3>
+        <h3 className="text-base font-bold">New & Upcoming</h3>
         <ul className="p-2">
           <li className="flex items-center">
-            <span className="text-tiny">New Arrivals</span>
+            <span className="text-base">New Arrivals</span>
           </li>
           <li className="flex items-center">
-            <span className="text-tiny">Coming Soon</span>
+            <span className="text-base">Coming Soon</span>
           </li>
         </ul>
       </section>

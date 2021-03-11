@@ -63,7 +63,7 @@ export default function RegisterPage() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-60">
+      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-96">
         <div className="inline-flex">
           <Link to="/">
             <img src="/logo-black.png" className="w-24" alt="Logo"></img>
@@ -75,9 +75,9 @@ export default function RegisterPage() {
         >
           <h1 className="font-bold">Create Account</h1>
           {error && (
-            <p className="text-red-500 font-bold text-tiny py-2 ">{error}</p>
+            <p className="text-red-500 font-bold text-base py-2 ">{error}</p>
           )}
-          <label htmlFor="name" className="font-bold text-tiny md:ml-1">
+          <label htmlFor="name" className="font-bold text-base md:ml-1">
             Name
           </label>
           <input
@@ -88,11 +88,11 @@ export default function RegisterPage() {
             required
             onChange={handleOnChange}
             value={state.name}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Name"
             minLength={3}
           />
-          <label htmlFor="email" className="font-bold text-tiny md:ml-1">
+          <label htmlFor="email" className="font-bold text-base md:ml-1">
             Email
           </label>
           <input
@@ -103,10 +103,10 @@ export default function RegisterPage() {
             required
             onChange={handleOnChange}
             value={state.email}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Email"
           />
-          <label htmlFor="password" className="font-bold text-tiny md:ml-1">
+          <label htmlFor="password" className="font-bold text-base md:ml-1">
             Password
           </label>
           <input
@@ -117,11 +117,11 @@ export default function RegisterPage() {
             required
             onChange={handleOnChange}
             value={state.password}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Password"
             minLength={6}
           />
-          <label htmlFor="password" className="font-bold text-tiny md:ml-1">
+          <label htmlFor="password" className="font-bold text-base md:ml-1">
             Re-Enter Password
           </label>
           <input
@@ -132,17 +132,17 @@ export default function RegisterPage() {
             required
             onChange={handleOnChange}
             value={state.confirmPassword}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Re-Enter Password"
             minLength={6}
           />
           <button
             type="submit"
-            className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-tiny p-1 w-full rounded-sm my-3 border border-gray-500"
+            className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-base p-1 w-full rounded-sm my-3 border border-gray-500"
           >
             Create your Amazon account
           </button>
-          <p className="text-tiny tracking-none">
+          <p className="text-base tracking-none">
             By continuing, you agree to Amazon's{' '}
             <a href="#" className="text-blue-500">
               Conditions of Use
@@ -154,7 +154,7 @@ export default function RegisterPage() {
             .
           </p>
           <div className="w-1/2 mx-auto mt-4 border-t-2 border-gray-100"></div>
-          <p className="text-tiny">
+          <p className="text-base">
             Alread have an account?{' '}
             <Link to="login" className="text-blue-500">
               Sign In

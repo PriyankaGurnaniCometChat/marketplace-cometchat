@@ -15,7 +15,7 @@ const CategoryPage = () => {
       <div className="flex-grow w-full ml-4 col-span-2 md:col-span-8">
         <div className="text-black border-b border-gray-300 pb-2">
           <h1 className="capitalize font-bold">{name}</h1>
-          <h3 className="capitalize text-tiny">Shop {name}</h3>
+          <h3 className="capitalize text-base">Shop {name}</h3>
         </div>
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 my-4">
           <FirestoreCollection

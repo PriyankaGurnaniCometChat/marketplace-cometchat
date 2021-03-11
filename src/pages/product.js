@@ -88,36 +88,36 @@ const ProductPage = () => {
                         d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792"
                       />
                     </svg>
-                    <p className="text-blue-500 text-tiny">426 ratings</p>
+                    <p className="text-blue-500 text-base">426 ratings</p>
                   </div>
                 </div>
                 <div className="border-b border-t my-2 py-2">
-                  <p className="text-tiny text-gray-700 mb-1">
+                  <p className="text-base text-gray-700 mb-1">
                     Price:{' '}
                     <span className="text-lg text-red-600 font-bold px-1">
                       {price}€
                     </span>
                     + Shipping fees to delivery
                   </p>
-                  <p className="text-tiny">
+                  <p className="text-base">
                     Available at a lower price from other sellers that may not
                     offer free Prime shipping.
                   </p>
                 </div>
-                <div className="my-1 text-tiny">
+                <div className="my-1 text-base">
                   <h4 className="font-bold">About this item</h4>
                   <p className="py-1">{description}</p>
                 </div>
               </div>
               <div className="block col-span-2 p-3 rounded border border-gray-300 w-full">
-                <p className="text-tiny text-gray-700 mb-1">
+                <p className="text-base text-gray-700 mb-1">
                   <span className="text-md text-red-600 font-bold pr-1">
                     {price}€
                   </span>
                   + Shipping fees to delivery
                 </p>
                 <div className="my-2">
-                  <p className="text-gray-700 text-tiny py-1">
+                  <p className="text-gray-700 text-base py-1">
                     Arrives:{' '}
                     <span className="font-bold text-black">Tomorrow</span>
                   </p>
@@ -141,13 +141,13 @@ const ProductPage = () => {
                         </g>
                       </svg>
                     </div>
-                    <p className="text-blue-400  text-tiny">
+                    <p className="text-blue-400  text-base">
                       Deliver to Portugal
                     </p>
                   </div>
                 </div>
                 <p className="font-bold text-green-600 my-2">In Stock.</p>
-                <select className="text-tiny bg-gradient-to-t from-gray-300 to-gray-100 rounded-lg border border-gray-400 shadow">
+                <select className="text-base bg-gradient-to-t from-gray-300 to-gray-100 rounded-lg border border-gray-400 shadow">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -161,13 +161,13 @@ const ProductPage = () => {
                 </select>
                 <button
                   type="submit"
-                  className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-tiny p-1 w-full rounded-sm my-2 border border-gray-500"
+                  className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-base p-1 w-full rounded-sm my-2 border border-gray-500"
                 >
                   Add to Cart
                 </button>
                 <button
                   type="submit"
-                  className="bg-gradient-to-t from-yellow-600 to-yellow-400 text-tiny p-1 w-full rounded-sm my-2 border border-gray-500"
+                  className="bg-gradient-to-t from-yellow-600 to-yellow-400 text-base p-1 w-full rounded-sm my-2 border border-gray-500"
                 >
                   Buy now
                 </button>
@@ -179,7 +179,7 @@ const ProductPage = () => {
                 >
                   {({ user }) => (
                     <button
-                      className="bg-gradient-to-t from-blue-400 to-blue-200 text-tiny p-1 w-full my-2 rounded-sm border border-gray-500 text-white"
+                      className="bg-gradient-to-t from-blue-400 to-blue-200 text-base p-1 w-full my-2 rounded-sm border border-gray-500 text-white"
                       onClick={() =>
                         createProductChatGroup(
                           user.uid,

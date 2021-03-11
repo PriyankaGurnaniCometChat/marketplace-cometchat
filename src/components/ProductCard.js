@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard({
   product: { image, title, price, id },
@@ -9,12 +9,12 @@ export default function ProductCard({
     <Link to={`/product/${id}`}>
       <div className="p-2 flex flex-col bg-white">
         {bestSeller && (
-          <div className="bg-yellow-600 py-1 px-2 bo self-start text-tiny font-bold text-white">
+          <div className="bg-yellow-600 py-1 px-2 bo self-start text-base font-bold text-white">
             Best Seller
           </div>
         )}
         <img src={image} className="h-32 w-32 my-4"></img>
-        <p className="text-tiny">{title}</p>
+        <p className="text-base">{title}</p>
         <div className="h-2 w-2 flex justify-center items-center my-2">
           <svg
             viewBox="0 0 16 16"
@@ -24,8 +24,8 @@ export default function ProductCard({
             focusable="false"
             className="h-2 w-2 overflow-visible"
             style={{
-              fill: "#FF9900",
-              stroke: "#bd7100",
+              fill: '#FF9900',
+              stroke: '#bd7100',
               strokeWidth: 1,
             }}
           >
@@ -54,7 +54,7 @@ export default function ProductCard({
           </svg>
         </div>
         <span className="text-sm leading-1">{price}€</span>
-        <p className="text-tiny">
+        <p className="text-base">
           Arrives: <span className="font-bold">Tomorrow</span>
         </p>
       </div>

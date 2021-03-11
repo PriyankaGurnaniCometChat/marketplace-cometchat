@@ -5,7 +5,7 @@ export default function ProductSlider({ title, products }) {
   return (
     <div className="bg-white p-4">
       <span className="font-bold text-md text-gray-600 mr-4">{title}</span>
-      <a href="#" className="text-tiny text-blue-500">
+      <a href="#" className="text-base text-blue-500">
         Shop now
       </a>
       <div

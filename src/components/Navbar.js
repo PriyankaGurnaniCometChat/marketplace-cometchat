@@ -39,7 +39,7 @@ export default function Navbar() {
                   </g>
                 </svg>
               </div>
-              <div className="flex flex-col text-tiny leading-tight text-left">
+              <div className="flex flex-col text-base leading-tight text-left">
                 <p className="text-gray-400 font-bold tracking-tight">
                   Deliver to
                 </p>
@@ -91,11 +91,11 @@ export default function Navbar() {
         {/* <!-- login --> */}
         <div className="sm:block flex mx-2 mr-4">
           <div className="flex justify-center items-center">
-            <div className="flex flex-col text-tiny leading-tight text-left group inline-block relative">
+            <div className="flex flex-col text-base leading-tight text-left group inline-block relative">
               <p className="text-white inline-flex">Hello,</p>
               <FirebaseAuthConsumer>
                 {({ isSignedIn }) => (
-                  <ul className="absolute hidden text-gray-700 group-hover:block rounded bg-white shadow mt-7 font-bold text-md">
+                  <ul className="absolute hidden text-gray-700 group-hover:block rounded bg-white shadow mt-16 md:mt-7 font-bold text-md">
                     {!isSignedIn && (
                       <li className="">
                         <Link
@@ -157,15 +157,15 @@ export default function Navbar() {
                     alt="Inbox Icon"
                   ></img>
                 </div>
-                <p className="text-white font-bold text-tiny pb-1">Inbox</p>
+                <p className="text-white font-bold text-base pb-1">Inbox</p>
               </div>
             </div>
           </button>
         </Link>
         {/* <!-- end cart --> */}
       </div>
-      <div className="hidden md:block bg-gray-800 w-full flex justify-start items-center mx-auto px-2 py-1">
-        <div className="text-white text-tiny leading-4">
+      <div className="hidden md:block bg-gray-800 w-full flex justify-start items-center mx-auto px-2 py-2">
+        <div className="text-white text-base leading-4">
           <ul className="flex">
             <FirestoreCollection path="/categories" limit={4}>
               {({ isLoading, value }) => {

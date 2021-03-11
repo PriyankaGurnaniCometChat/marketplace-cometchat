@@ -72,7 +72,7 @@ export default function NewProductPage() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-60">
+      <div className="flex flex-col justify-center items-center mx-auto px-2 py-2 border-gray-700 w-full md:w-96">
         <div className="inline-flex">
           <Link to="/">
             <img src="/logo-black.png" className="w-24" alt="Logo"></img>
@@ -84,9 +84,9 @@ export default function NewProductPage() {
         >
           <h1 className="font-bold">New Product</h1>
           {error && (
-            <p className="text-red-500 font-bold text-tiny py-2 ">{error}</p>
+            <p className="text-red-500 font-bold text-base py-2 ">{error}</p>
           )}
-          <label htmlFor="title" className="font-bold text-tiny ml-1">
+          <label htmlFor="title" className="font-bold text-base ml-1">
             Title
           </label>
           <input
@@ -97,10 +97,10 @@ export default function NewProductPage() {
             required
             onChange={handleOnChange}
             value={state.title}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Title"
           />
-          <label htmlFor="description" className="font-bold text-tiny ml-1">
+          <label htmlFor="description" className="font-bold text-base ml-1">
             Description
           </label>
           <textarea
@@ -111,10 +111,10 @@ export default function NewProductPage() {
             onChange={handleOnChange}
             value={state.description}
             rows={4}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Description"
           />
-          <label htmlFor="image" className="font-bold text-tiny ml-1">
+          <label htmlFor="image" className="font-bold text-base ml-1">
             Image URL
           </label>
           <input
@@ -125,10 +125,10 @@ export default function NewProductPage() {
             required
             onChange={handleOnChange}
             value={state.image}
-            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-full p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="https://..."
           />
-          <label htmlFor="category" className="font-bold text-tiny ml-1">
+          <label htmlFor="category" className="font-bold text-base ml-1">
             Category
           </label>
           <select
@@ -137,7 +137,7 @@ export default function NewProductPage() {
             required
             onChange={handleOnChange}
             value={state.category}
-            className="capitalize appearance-none rounded-sm relative block w-1/2 p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="capitalize appearance-none rounded-sm relative block w-1/2 p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
           >
             <option className="capitalize" value="">
               Please select one
@@ -159,7 +159,7 @@ export default function NewProductPage() {
               }}
             </FirestoreCollection>
           </select>
-          <label htmlFor="price" className="font-bold text-tiny ml-1">
+          <label htmlFor="price" className="font-bold text-base ml-1">
             Price (€)
           </label>
           <input
@@ -170,16 +170,16 @@ export default function NewProductPage() {
             required
             onChange={handleOnChange}
             value={state.price}
-            className="appearance-none rounded-sm relative block w-1/2 p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-tiny"
+            className="appearance-none rounded-sm relative block w-1/2 p-1 border border-gray-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-base"
             placeholder="Price per unit"
           />
           <button
             type="submit"
-            className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-tiny p-1 w-full rounded-sm my-3 border border-gray-500"
+            className="bg-gradient-to-t from-yellow-300 to-yellow-100 text-base p-1 w-full rounded-sm my-3 border border-gray-500"
           >
             Continue
           </button>
-          <p className="text-tiny tracking-none">
+          <p className="text-base tracking-none">
             By continuing, you agree to Amazon's{' '}
             <a href="#" className="text-blue-500">
               Conditions of Use

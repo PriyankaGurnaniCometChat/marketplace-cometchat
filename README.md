@@ -6,7 +6,11 @@ Read the full tutorial here:
 
 This example shows how to build an marketplace like Amazon where you can chat with the product's seller to answer your queries:
 
-<SCREENSHOT - PLEASE ENSURE SCREENSHOTS LIVE IN A /screenshots FOLDER>
+<div>
+<img alt="Desktop Demo" src="./screenshots/desktop.gif" width=600>
+
+<img alt="Mobile Demo" src="./screenshots/mobile.gif" width=200>
+</div>
 
 ## Technology
 This demo uses:

@@ -33,7 +33,6 @@ To run the demo follow these steps:
 5. Create an API key called "Marketplace Chat Key" with **Full Access**
 4. Clone the repository by running `git clone git@github.com:igorasilveira/marketplace-cometchat.git` and open it in your editor of choice.
 5. Copy the [`.env.example`](https://github.com/igorasilveira/marketplace-cometchat/blob/main/.env.example) and rename it to `.env` and update the COMETCHAT related variables with your `appId`, `authKey` and `region`.
-6. Head up to the [Firebase Console](https://firebase.google.com) and create a new app called Marketplace Chat. Once inside, add a new web app and copy the configuration variables `apiKey`, `authDomain`, `projectId`, `storageBucket`, `messagingSenderId` and `appId`. Add them to the `.env` file under the respective variables already there.
 6. Run `npm install` on the root of the project to install dependencies.
 7. Run `npm start` to run you application locally.
 8. Start registering users and creating products!

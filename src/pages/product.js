@@ -174,7 +174,7 @@ const ProductPage = () => {
 
                 <IfFirebaseAuthedAnd
                   filter={({ user }) => {
-                    return user.uid !== ownerUID;
+                    return ownerUID && user.uid !== ownerUID;
                   }}
                 >
                   {({ user }) => (

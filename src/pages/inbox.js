@@ -4,7 +4,9 @@ import { CometChatGroupListWithMessages } from '../CometChatWorkspace/src';
 
 const InboxPage = () => {
   return (
-    <div className="h-screen w-full">
+    <div className="w-full" style={{
+      height: '90vh'
+    }}>
       <CometChatGroupListWithMessages />
     </div>
   );

@@ -2,7 +2,7 @@
 
 Read the full tutorial here:
 
-[**>> How to Build a Marketplace Site With React (Amazon Clone)**](https://www.cometchat.com/tutorials/build-a-modern-android-chat-app-with-kotlin/?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat)
+[**>> How to Build a Marketplace Site With React (Amazon Clone)**](https://www.cometchat.com/tutorials/build-marketplace-site-with-react-and-real-time-chat-amazon-clone/?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat)
 
 This example shows how to build an marketplace like Amazon where you can chat with the product's seller to answer your queries:
 
